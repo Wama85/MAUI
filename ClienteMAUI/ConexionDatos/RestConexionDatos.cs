@@ -29,6 +29,7 @@ namespace ClienteMAUI.ConexionDatos
         public async Task<List<Plato>> GetPlatosAsync()
         {
             List<Plato> platos = new List<Plato>();
+            
             if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet) {
                 Debug.WriteLine("[RED] Sin acceso a internet.");
                 return platos;

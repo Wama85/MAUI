@@ -14,10 +14,17 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 		this.conexionDatos = conexionDatos;
-	}
+        var ordenarAleatoriamenteButton = new ToolbarItem
+        {
+            Text = "Ordenar aleatoriamente",
+            Command = new Command(OrdenarAleatoriamente)
+        };
+        ToolbarItems.Add(ordenarAleatoriamenteButton);
+    }
 	protected async override void OnAppearing()
 	{
 		base.OnAppearing();
+
 		coleccionPlatosView.ItemsSource = await conexionDatos.GetPlatosAsync();
 	}
 	//Evento Add
@@ -38,7 +45,13 @@ public partial class MainPage : ContentPage
         await Shell.Current.GoToAsync(nameof(GestionPlatosPage), param);
         Debug.WriteLine("[EVENTO] Se hizo clic en algun plato.");
     }
-    
+    private void OrdenarAleatoriamente()
+    {
+        var platos = (List<Plato>)coleccionPlatosView.ItemsSource;
+        var random = new Random();
+        var resultado = platos.OrderBy(x => random.Next());
+        coleccionPlatosView.ItemsSource = resultado;
+    }
 
 }
 
