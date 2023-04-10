@@ -125,5 +125,6 @@ namespace ClienteMAUI.ConexionDatos
                 Debug.WriteLine($"[ERROR] {e.Message}");
             }
         }
+       
     }
 }

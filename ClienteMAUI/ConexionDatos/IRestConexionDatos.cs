@@ -12,6 +12,7 @@ namespace ClienteMAUI.ConexionDatos
         Task<List<Plato>> GetPlatosAsync();
         Task AddPlatoAsync(Plato plato);
         Task UpdatePlatoAsync(Plato plato);
+       
         Task DeletePlatoAsync(int id);
     }
 }
