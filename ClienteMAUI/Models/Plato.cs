@@ -30,8 +30,8 @@ namespace ClienteMAUI.Models
             }
         }
 
-        private string _Costo;
-        public string Costo
+        private float _Costo;
+        public float Costo
         {
             get => _Costo;
             set

@@ -10,7 +10,8 @@ public partial class GestionPlatosPage : ContentPage
     private readonly IRestConexionDatos conexionDatos;
 	private Plato _plato;
 	private bool _esNuevo;//si el plato es nuevo
-	public Plato plato {
+   
+    public Plato plato {
 		get => _plato;
 		set {
 			_esNuevo = esNuevo(value);
@@ -47,4 +48,6 @@ public partial class GestionPlatosPage : ContentPage
 		await conexionDatos.DeletePlatoAsync(plato.Id);
         await Shell.Current.GoToAsync("..");
     }
+    
+
 }

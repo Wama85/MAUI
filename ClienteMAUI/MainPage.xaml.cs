@@ -38,5 +38,7 @@ public partial class MainPage : ContentPage
         await Shell.Current.GoToAsync(nameof(GestionPlatosPage), param);
         Debug.WriteLine("[EVENTO] Se hizo clic en algun plato.");
     }
+    
+
 }
 

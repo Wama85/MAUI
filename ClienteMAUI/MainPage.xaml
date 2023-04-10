@@ -16,6 +16,7 @@
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <Label Text="{Binding Nombre}" FontSize="Medium"/>
+                
 
             </DataTemplate>
 
